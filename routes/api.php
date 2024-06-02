@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,4 +17,8 @@ Route::post('/tokens/create', function (Request $request) {
 
 Route::controller(UserController::class)->group(function(){
     Route::get('/users','fetch_all_users');
- });
+});
+
+Route::controller(BookController::class)->group(function(){
+    Route::get('/books','fetch_all_books');
+});

@@ -9,6 +9,6 @@ class UserController extends Controller
 {
     public function fetch_all_users(){
        $sadsad = User::where('name','Test User')->first();
-       echo $sadsad;
-   }
+       return response()->json($sadsad);
+    }
 }
